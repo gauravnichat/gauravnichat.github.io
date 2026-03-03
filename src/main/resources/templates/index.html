@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Gaurav | Java Developer</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+<div id="particles-js"></div>
+<!-- Toggle Button -->
+<button class="toggle-btn" onclick="toggleSidebar()">
+    <i class="bi bi-list"></i>
+</button>
+
+<div class="d-flex">
+
+    <!-- Sidebar -->
+    <nav class="sidebar p-4" id="sidebar">
+
+        <!-- Profile -->
+        <!-- Profile -->
+        <div class="text-center mb-4">
+            <img th:src="@{/images/profile.jpg}" class="profile-img" alt="Profile">
+            <h5 class="mt-3">Gaurav Nichat</h5>
+            <p class="role-text">Backend Developer | Software Engineer</p>
+        </div>
+
+            <!-- Social Icons -->
+            <div class="social-icons mt-3">
+                <a href="https://github.com/YOUR_USERNAME" target="_blank">
+                    <i class="bi bi-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/gaurav-nichat-6845bb155" target="_blank">
+                    <i class="bi bi-linkedin"></i>
+                </a>
+                <a href="https://instagram.com/gauravnichat" target="_blank">
+                    <i class="bi bi-instagram"></i>
+                </a>
+            </div>
+
+
+        <ul class="nav flex-column mt-3">
+            <li><a href="#home" class="nav-link"><i class="bi bi-house"></i> Home</a></li>
+            <li><a href="#about" class="nav-link"><i class="bi bi-person"></i> About</a></li>
+            <li><a href="#experience" class="nav-link"><i class="bi bi-file-earmark"></i> Experience</a></li>
+            <li><a href="#skills" class="nav-link"><i class="bi bi-bar-chart"></i> Skills</a></li>
+            <li><a href="#projects" class="nav-link"><i class="bi bi-grid"></i> Projects</a></li>
+        </ul>
+
+        <div class="resume-buttons">
+            <a href="/cv/Gaurav_CV.pdf" target="_blank" class="resume-btn">
+        <span class="btn-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 4.5C7.305 4.5 3.134 7.364 1 12c2.134 4.636 6.305 7.5 11 7.5s8.866-2.864 11-7.5c-2.134-4.636-6.305-7.5-11-7.5zm0 12.5a5 5 0 110-10 5 5 0 010 10z"/>
+            </svg>
+        </span>
+                View Resume
+            </a>
+
+            <a href="/cv/Gaurav_CV.pdf" download class="resume-btn">
+        <span class="btn-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 16l4-5h-3V4h-2v7H8l4 5zm-8 2h16v2H4v-2z"/>
+            </svg>
+        </span>
+                Download Resume
+            </a>
+        </div>
+        <div class="sidebar-footer">
+            © <span id="year"></span>
+            <div class="footer-credit">
+                Designed & Developed by <span>Gaurav</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="content p-5" id="content">
+
+        <!-- Hero -->
+        <section id="home" class="hero">
+            <h1>
+                Hi, I'm <span class="name-typing"></span> 👋
+            </h1>
+            <h3 class="typing"></h3>
+            <h3 class="typing"></h3>
+
+            <p class="mt-3">
+                Backend Developer specializing in Spring Boot, WebFlux,
+                Kafka & scalable microservices architecture.
+            </p>
+
+            <div class="mt-4">
+                <button class="btn btn-outline-light me-3">View Projects</button>
+                <button class="btn btn-gradient">Contact Me</button>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section id="about" class="mt-5 fade-in">
+            <h2 class="section-title">
+                <span class="section-icon">👨‍💻</span> About Me
+            </h2>
+            <p>
+                Backend-focused software engineer with 4+ years of experience designing and
+                developing scalable microservices and distributed systems. Skilled in Java,
+                Spring Boot, WebFlux, and Kafka, with hands-on expertise in building secure,
+                high-performance APIs and reactive architectures. Passionate about clean code,
+                system design, and delivering reliable production-ready solutions.
+            </p>
+        </section>
+
+        <!-- Experience -->
+        <div id="experience" class="experience-section">
+            <h2 class="section-title">
+                <span class="section-icon">💼</span> Experience
+            </h2>
+
+            <div class="timeline">
+
+                <!-- ATOS -->
+                <div class="company-block">
+
+                    <div class="company-header">
+                        <img src="/images/atos.png" class="company-logo" alt="Atos Logo">
+                        <div>
+                            <h3 class="company-name">Atos</h3>
+                        </div>
+                    </div>
+
+                    <div class="role-item">
+                        <div class="exp-dot"></div>
+                        <div class="role-content">
+                            <h4>Associate Consultant</h4>
+                            <span class="duration">May 2025 – Present</span>
+                            <p>
+                                Building scalable backend microservices using Spring Boot and Kafka.
+                                Designing high-performance REST APIs.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- INFOSYS -->
+                <div class="company-block">
+
+                    <div class="company-header fade-in">
+                        <img src="/images/infosys.png" class="company-logo" alt="Infosys Logo">
+                        <div>
+                            <h3>Infosys</h3>
+                            <span class="company-duration" id="infosys-duration"></span>
+                        </div>
+                    </div>
+
+                    <div class="company-roles">
+
+                        <!-- Latest Role -->
+                        <div class="role-item fade-in">
+                            <div class="exp-dot"></div>
+                            <div class="role-content">
+                                <h4>Technology Analyst</h4>
+                                <span class="duration">Jul 2024 – May 2025</span>
+                                <span class="promotion-badge">↑ Promoted</span>
+                                <p>Developed microservice-based applications using Java & Spring Boot.</p>
+                            </div>
+                        </div>
+
+                        <!-- Previous Role -->
+                        <div class="role-item fade-in">
+                            <div class="exp-dot"></div>
+                            <div class="role-content">
+                                <h4>Senior System Engineer</h4>
+                                <span class="duration">Oct 2022 – Jul 2024</span>
+                                <span class="promotion-badge">↑ Promoted</span>
+                                <p>Backend developer handling enterprise applications and batch jobs.</p>
+                            </div>
+                        </div>
+
+                        <!-- Oldest Role -->
+                        <div class="role-item fade-in">
+                            <div class="exp-dot"></div>
+                            <div class="role-content">
+                                <h4>System Engineer</h4>
+                                <span class="duration">Jun 2021 – Oct 2022</span>
+                                <p>Worked on backend support and production issue handling.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Skills -->
+        <div id="skills" class="skills-section">
+            <h2 class="section-title">
+                <span class="section-icon">🛠</span> Skills
+            </h2>
+
+            <div class="skills-grid">
+
+                <div class="skill-chip">
+                    <img src="/images/javal.png" alt="Java">
+                    <span>Java</span>
+                </div>
+
+                <div class="skill-chip">
+                    <img src="/images/spring.png" alt="Spring Boot">
+                    <span>Spring Boot</span>
+                </div>
+
+                <div class="skill-chip">
+                    <img src="/images/webflux.png" alt="WebFlux">
+                    <span>WebFlux</span>
+                </div>
+
+                <div class="skill-chip">
+                    <img src="/images/aws.png" alt="AWS">
+                    <span>AWS</span>
+                </div>
+
+                <div class="skill-chip">
+                    <img src="/images/kafka.png" alt="Kafka">
+                    <span>Kafka</span>
+                </div>
+
+                <div class="skill-chip">
+                    <img src="/images/elastic.png" alt="Elastic">
+                    <span>Elastic</span>
+                </div>
+                <div class="skill-chip">
+                <img src="/images/pgadmin.png" alt="PgAdmin">
+                <span>PgAdmin</span>
+            </div>
+
+            </div>
+        </div>
+
+        <!-- Projects -->
+        <section id="projects" class="mt-5 fade-in">
+            <h2>Projects</h2>
+
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="project-card p-4">
+                        <h4>Reactive Microservice System</h4>
+                        <p>Spring WebFlux + Kafka based scalable backend system.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="project-card p-4">
+                        <h4>Portfolio Website</h4>
+                        <p>Modern premium UI built using Spring Boot & Thymeleaf.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="mt-5 fade-in">
+            <h2>Contact Me</h2>
+
+            <div class="contact-box p-4 mt-4">
+                <form>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Your Name" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <input type="email" class="form-control" placeholder="Your Email" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <textarea class="form-control" rows="4" placeholder="Your Message" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-gradient">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </section>
+
+    </div>
+</div>
+<!-- Sidebar Toggle Script -->
+<script>
+function toggleSidebar() {
+    document.getElementById("sidebar").classList.toggle("collapsed");
+    document.getElementById("content").classList.toggle("expanded");
+}
+
+/* Typing Effect */
+const text = "Java | Spring Boot | WebFlux Developer";
+let i = 0;
+function typingEffect() {
+    if (i < text.length) {
+        document.querySelector(".typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typingEffect, 50);
+    }
+}
+typingEffect();
+</script>
+<script>
+const nameText = "Gaurav";
+let nameIndex = 0;
+let isDeleting = false;
+
+function typeName() {
+
+    const element = document.querySelector(".name-typing");
+
+    if (!isDeleting) {
+        element.textContent = nameText.substring(0, nameIndex + 1);
+        nameIndex++;
+
+        if (nameIndex === nameText.length) {
+            setTimeout(() => isDeleting = true, 1200);
+        }
+    } else {
+        element.textContent = nameText.substring(0, nameIndex - 1);
+        nameIndex--;
+
+        if (nameIndex === 0) {
+            isDeleting = false;
+        }
+    }
+
+    setTimeout(typeName, isDeleting ? 70 : 100);
+}
+
+typeName();
+</script>
+<script>
+const faders = document.querySelectorAll('.fade-in');
+
+const appearOptions = {
+threshold: 0.2
+};
+
+const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+entries.forEach(entry => {
+if (!entry.isIntersecting) return;
+entry.target.classList.add('show');
+observer.unobserve(entry.target);
+});
+}, appearOptions);
+
+faders.forEach(fader => {
+appearOnScroll.observe(fader);
+});
+</script>
+<script>
+    function calculateDuration(startYear, startMonth) {
+        const start = new Date(startYear, startMonth - 1);
+        const now = new Date();
+
+        let years = now.getFullYear() - start.getFullYear();
+        let months = now.getMonth() - start.getMonth();
+
+        if (months < 0) {
+            years--;
+            months += 12;
+        }
+
+        return years + " yrs " + months + " mos";
+    }
+
+    document.getElementById("infosys-duration").innerText =
+        "Jun 2021 – May 2025 · " + calculateDuration(2021, 6);
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    const sections = Array.from(navLinks).map(link => {
+        const id = link.getAttribute("href").substring(1);
+        return document.getElementById(id);
+    });
+
+    window.addEventListener("scroll", () => {
+
+        let current = "";
+
+        sections.forEach(section => {
+            if (!section) return;
+
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+
+            if (window.scrollY >= sectionTop - 200) {
+                current = section.getAttribute("id");
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove("active");
+
+            if (link.getAttribute("href") === "#" + current) {
+                link.classList.add("active");
+            }
+        });
+
+    });
+
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+<script>
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 50 },
+    color: { value: "#38bdf8" },
+    shape: { type: "circle" },
+    opacity: { value: 0.3 },
+    size: { value: 3 },
+    line_linked: {
+      enable: true,
+      distance: 140,
+      color: "#6366f1",
+      opacity: 0.2,
+      width: 1
+    },
+    move: {
+      enable: true,
+      speed: 1.5
+    }
+  },
+  interactivity: {
+    events: {
+      onhover: {
+        enable: true,
+        mode: "grab"
+      }
+    }
+  },
+  retina_detect: true
+});
+</script>
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
